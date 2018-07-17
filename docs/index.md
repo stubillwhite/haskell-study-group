@@ -1,4 +1,6 @@
-# Haskell Study Group
-
 - Get Programming With Haskell Notes
-  - [get-programming-with-haskell-notes/](get-programming-with-haskell-notes/lesson-1.md)
+  - [Lesson 1](get-programming-with-haskell-notes/lesson-1.md)
+  - [Lesson 2](get-programming-with-haskell-notes/lesson-2.md)
+  - [Lesson 3](get-programming-with-haskell-notes/lesson-3.md)
+  - [Lesson 4](get-programming-with-haskell-notes/lesson-4.md)
+- [Syntax cheatsheet](syntax-cheatsheet.md)
