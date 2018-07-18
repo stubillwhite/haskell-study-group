@@ -1,3 +1,4 @@
+- [Installation and Quickstart](installation-and-quickstart.md)
 - Get Programming With Haskell Notes
   - [Lesson 1](get-programming-with-haskell-notes/lesson-1.md)
   - [Lesson 2](get-programming-with-haskell-notes/lesson-2.md)
