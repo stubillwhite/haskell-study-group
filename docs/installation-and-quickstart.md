@@ -15,3 +15,7 @@ running, clone the project, then:
 - `cabal configure --enable-tests`
 - `cabal build`
 - `cabal test`
+
+To run a single test suite, specify it as a pattern:
+
+```cabal test tasty --show-detail=direct --test-option=--pattern="Tests.List."```
