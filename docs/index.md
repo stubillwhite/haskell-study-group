@@ -1,7 +1,3 @@
 - [Installation and Quickstart](installation-and-quickstart.md)
-- Get Programming With Haskell Notes
-  - [Lesson 1](get-programming-with-haskell-notes/lesson-1.md)
-  - [Lesson 2](get-programming-with-haskell-notes/lesson-2.md)
-  - [Lesson 3](get-programming-with-haskell-notes/lesson-3.md)
-  - [Lesson 4](get-programming-with-haskell-notes/lesson-4.md)
+- [Get Programming With Haskell notes](get-programming-with-haskell-notes.md)
 - [Syntax cheatsheet](syntax-cheatsheet.md)
