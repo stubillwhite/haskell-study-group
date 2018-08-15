@@ -15,7 +15,7 @@ function_name input_parameter1 input_parameter2 input_parameterN = result
 
 All functions must
 
-- have a lowercase name
+- begin with a lowercase letter
 - take at least one argument, but may take more if separated by space
 - return something
 - obey **referential transparency**, which means that anytime a function is called with same argument must always return
@@ -51,10 +51,73 @@ programming languages:
 Calling a function with fewer arguments than it accepts is called partial application. It results in a function with
 those arguments in a closure
 
-
-
-
 # Types
+
+All types must
+
+- Begin with an uppercase letter
+
+## Type annotations
+
+Type annotations are entirely optional -- the compiler will infer the correct type based on how a symbol is being used.
+However, it's best practice to add type annotations to help humans infer what the code does, and to state your
+assumptions about the types in the code so the compiler can warn about situations where what you think the code does and
+what it actually does differ.
+
+    add :: Int -> Int -> Int                -- Type annotation for a function taking two Ints and returning an Int
+    add a b = a + b                         -- Definition of the function
+
+If a type is ambiguous then it's possible to clarify the type by post-fixing a type annotation. This is most often
+useful in the REPL where there is no context for the compiler to infer the correct type
+    
+    GHCi> read "6" :: Int
+    6
+   
+    GHCi> read "6" :: Double
+    6.0
+
+The types for parameters which are higher-order functions can be specified by using braces to group the types:
+
+
+    addN :: Int -> (Int -> Int)
+    addN n = (+) n
+    
+    addFive = addN 5
+    addFive 10                              -- 15
+
+## Type variables
+
+Type variables are specified using a lowercase letter
+
+    concat :: List a -> List a -> List a
+    
+The function `concat` takes two lists which may contain items of any type and returns a single list containing items of
+that type. The types must all be the same -- the type variable `a` refers to the same type throughout the signature.
+
+## Type synonyms
+
+Type synonyms are simple aliases for existing types
+
+    type Name = String
+    type AccountNumber = Int
+    
+These are simple ways to attach semantics to your data.
+
+## Union types
+
+Union types are types which can refer to one or 
+
+    data Sex = Male | Female
+    
+The type definition creates two constructors (`Male` and `Female`) for creating instances of the `Sex` type.
+
+## Record types
+
+Record types are structures composed of other types.
+
+    data Person = Person { name :: Name
+                         , sex :: Sex
+                         , accountNumber: AccountNumber }
 
 ## Tuples
 
