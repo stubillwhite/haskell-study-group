@@ -13,7 +13,7 @@ universal model of computation, equivalent to a Turing machine.
 function_name input_parameter1 input_parameter2 input_parameterN = result
 ```
 
-All functions must
+All functions must:
 
 - begin with a lowercase letter
 - take at least one argument, but may take more if separated by space
@@ -53,7 +53,7 @@ those arguments in a closure
 
 # Types
 
-All types must
+All types must:
 
 - Begin with an uppercase letter
 
@@ -153,4 +153,38 @@ Useful functions
     zip                -- Interleave two lists into a list of tuple pairs
     cycle              -- An infinite list created by appending this list to itself infinitely
 
+# Type classes
+
+Type classes are a way of grouping types based on shared behaviour.
+
+    class MyType a where
+      doSomething :: a -> a
+      doSomethingElse :: a -> String
+      
+This declares a new type class `MyType` with the type variable `a`, and required functions `doSomething` and `doSomethingElse`.
+
+Useful GHCi functions:
+
+    :info TYPECLASS    -- Display information about a specific type class
+
+## Deriving type classes on types
+
+When defining a type, it is possible to derive the type classes that type is a member of.
+
+    data MyEnumeration = Foo | Bar | Baz deriving (Show, Eq, Ord)
+    
+Favour deriving over manually implementing where possible.
+
+TODO: Add notes about how we make types derivable, which hasn't been covered yet.
+    
+## Implementing type classes
+
+    instance MyType MyEnumeration where
+        doSomething x = x
+        doSomethingElse x = "Did something else"
+
+## Default implementations
+
+TODO: Add notes about how we provide default methods, and how we find out what default methods are available, which
+haven't been covered yet.
 
