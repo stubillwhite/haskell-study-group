@@ -1,39 +1,45 @@
-### Syntax
+# Syntax cheatsheet
 
-##### Function
-```haskell
-function_name input_parameter1 input_parameter2 input_parameterN = result
-```
+## Functions
 
-##### Immutable Value
-```haskell
-x = 1
-```
+### Named functions
 
-##### Variable
-```haskell
-let x = 1
-```
+    addFive :: Int -> Int
+    addFive x = x + 5
 
-##### If Then Else
-```haskell
-calcChange change = if change > 0
-                        then change
-                        else 0
-```
+    -- Function literal
+    addFive = (+) 5
 
-##### Where
-```haskell
-doublePlusTwo x = doubleX + 2
-   where doubleX = x * 2
-```
+### Anonymous functions
 
-##### Lambda Function
-```haskell
-(\x -> x) argToPass
-```
+    (\x -> x) argToPass
 
-##### List 
-```haskell
-x = ["a", "b"]
-```
+## Arguments
+
+### Destructuring Lists
+
+    foo (x : xs) = ...
+    
+### Destructuring records
+
+    data Card = Card
+      { rank :: Rank
+      , suit :: Suit
+      }
+
+    checkCard card@Card{rank = r} = "My card is rank " ++ r
+
+## Guards
+
+    addFiveIfPositive :: Int -> Int
+    addFiveIfPositive x | x >= 0 = x + 5
+                        | otherwise = x
+
+## Data types
+
+### List
+
+    x = ["a", "b"]
+    x = "a" : "b" : Nil
+
+
