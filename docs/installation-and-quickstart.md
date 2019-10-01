@@ -33,3 +33,10 @@ To run a single test suite, specify it as a pattern:
 To run a single test, specify it as a pattern. Note that you should ensure that the pattern ends with a dot to avoid it being treated as a prefix and potentially matching other tests. For example, to run just the length test:
 
 ```cabal test tasty --show-detail=direct --test-option=--pattern="Tests.List.length."```
+
+# Tools and editors #
+
+Haskell tools that we're currently using
+
+- IntelliJ and the Haskell plugin
+- Emacs
