@@ -5,4 +5,4 @@ import Lib
 main :: IO ()
 -- main = someFunc
 main =
-  putStrLn mainFizz
+  sequence_ $ putStrLn <$> mainFizz 50
